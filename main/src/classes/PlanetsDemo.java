@@ -1,29 +1,162 @@
 package classes;
+import java.util.Scanner;
 
 public class PlanetsDemo {
-    Planets earth = new Planets("Earth",7913, 91.3f,
-            0f, false, 365);
+    static Planets earth = new Planets("Earth", "Terrestrial", 1, 7913,
+            91.3, 0, false, 365, 1);
 
-    Planets venus = new Planets("Venus", 7600, 66.7f,
-            25, false, 225);
+    static Planets venus = new Planets("Venus", "Terrestrial", 0.815, 7600,
+            66.7, 25, false, 225, 0);
 
-    Planets saturn = new Planets("Saturn", 71500, 837f,
-            744, true, 378);
+    static Planets saturn = new Planets("Saturn", "Gas giant", 95.2, 71500,
+            837, 744, true, 378, 82);
 
-    Planets mercury = new Planets("Mercury", 2900, 28.6f,
-            50, false, 88);
+    static Planets mercury = new Planets("Mercury", "Terrestrial", 0.055, 2900,
+            28.6, 50, false, 88, 0);
 
-    Planets mars = new Planets("Mars", 4200, 128.3f,
-            35, false, 693);
+    static Planets mars = new Planets("Mars", "Terrestrial", 0.1, 4200,
+            128.3, 35, false, 693, 2);
 
-    Planets jupiter = new Planets("Jupiter", 86800, 459.9f,
-            367, false, 4343);
+    static Planets jupiter = new Planets("Jupiter", "Gas giant", 317.8, 86800,
+            459.9, 367, false, 4343, 79);
 
-    Planets uranus = new Planets("Uranus", 29400, 1699f,
-            1606, false, 370);
+    static Planets uranus = new Planets("Uranus", "Ice giant", 14.54, 29400,
+            1699, 1606, false, 370, 27);
 
-    Planets neptune = new Planets("Neptune", 28000, 2770f,
-            2677, false, 367);
+    static Planets neptune = new Planets("Neptune", "Ice giant", 17.1, 28000,
+            2770, 2677, false, 367, 14);
+
+    static Scanner input = new Scanner(System.in);
+
+    public static int choosePlanet() {
+        System.out.println("Greetings!\nPlease, choose a planet you want to discover!\n" +
+                "1. Earth\t2. Venus\t3. Saturn\n4. Mercury\t5. Mars\t 6. Jupiter\n" +
+                "7. Uranus\t8. Neptune");
+        int choice = input.nextInt();
+        return choice;
+    }
+
+    public static void showEarth() {
+        System.out.println("Name: " + earth.getName() + "\n" + "Type: " + earth.getType() +
+                "\n" + "Mass: " + earth.getMass() + "\n" + "Diameter: " +
+                earth.getDiameter() + "\n" + "Minimal distance from the Sun: " +
+                earth.getDistanceFromSun() + "\n" + "Distance from the Earth: " +
+                earth.getDistanceFromEarth() + "\n" + "Orbital rings: " +
+                earth.isHaveRings() + "\n" + "Period of revolution: " +
+                earth.getPeriodOfRev() + "\n" + "Number of Satellites: " +
+                earth.getNumOfSat());
+    }
+
+    public static void showVenus() {
+        System.out.println("Name: " + venus.getName() + "\n" + "Type: " + venus.getType() +
+                "\n" + "Mass: " + venus.getMass() + "\n" + "Diameter: " +
+                venus.getDiameter() + "\n" + "Minimal distance from the Sun: " +
+                venus.getDistanceFromSun() + "\n" + "Distance from the Earth: " +
+                venus.getDistanceFromEarth() + "\n" + "Orbital rings: " +
+                venus.isHaveRings() + "\n" + "Period of revolution: " +
+                venus.getPeriodOfRev() + "\n" + "Number of Satellites: " +
+                venus.getNumOfSat());
+    }
+
+    public static void showSaturn() {
+        System.out.println("Name: " + saturn.getName() + "\n" + "Type: " + saturn.getType() +
+                "\n" + "Mass: " + saturn.getMass() + "\n" + "Diameter: " +
+                saturn.getDiameter() + "\n" + "Minimal distance from the Sun: " +
+                saturn.getDistanceFromSun() + "\n" + "Distance from the Earth: " +
+                saturn.getDistanceFromEarth() + "\n" + "Orbital rings: " +
+                saturn.isHaveRings() + "\n" + "Period of revolution: " +
+                saturn.getPeriodOfRev() + "\n" + "Number of Satellites: " +
+                saturn.getNumOfSat());
+    }
+
+    public static void showMercury() {
+        System.out.println("Name: " + mercury.getName() + "\n" + "Type: " + mercury.getType() +
+                "\n" + "Mass: " + mercury.getMass() + "\n" + "Diameter: " +
+                mercury.getDiameter() + "\n" + "Minimal distance from the Sun: " +
+                mercury.getDistanceFromSun() + "\n" + "Distance from the Earth: " +
+                mercury.getDistanceFromEarth() + "\n" + "Orbital rings: " +
+                mercury.isHaveRings() + "\n" + "Period of revolution: " +
+                mercury.getPeriodOfRev() + "\n" + "Number of Satellites: " +
+                mercury.getNumOfSat());
+    }
+
+    public static void showMars() {
+        System.out.println("Name: " + mars.getName() + "\n" + "Type: " + mars.getType() +
+                "\n" + "Mass: " + mars.getMass() + "\n" + "Diameter: " +
+                mars.getDiameter() + "\n" + "Minimal distance from the Sun: " +
+                mars.getDistanceFromSun() + "\n" + "Distance from the Earth: " +
+                mars.getDistanceFromEarth() + "\n" + "Orbital rings: " +
+                mars.isHaveRings() + "\n" + "Period of revolution: " +
+                mars.getPeriodOfRev() + "\n" + "Number of Satellites: " +
+                mars.getNumOfSat());
+    }
+
+    public static void showJupiter() {
+        System.out.println("Name: " + jupiter.getName() + "\n" + "Type: " + jupiter.getType() +
+                "\n" + "Mass: " + jupiter.getMass() + "\n" + "Diameter: " +
+                jupiter.getDiameter() + "\n" + "Minimal distance from the Sun: " +
+                jupiter.getDistanceFromSun() + "\n" + "Distance from the Earth: " +
+                jupiter.getDistanceFromEarth() + "\n" + "Orbital rings: " +
+                jupiter.isHaveRings() + "\n" + "Period of revolution: " +
+                jupiter.getPeriodOfRev() + "\n" + "Number of Satellites: " +
+                jupiter.getNumOfSat());
+    }
+
+    public static void showUranus() {
+        System.out.println("Name: " + uranus.getName() + "\n" + "Type: " + uranus.getType() +
+                "\n" + "Mass: " + uranus.getMass() + "\n" + "Diameter: " +
+                uranus.getDiameter() + "\n" + "Minimal distance from the Sun: " +
+                uranus.getDistanceFromSun() + "\n" + "Distance from the Earth: " +
+                uranus.getDistanceFromEarth() + "\n" + "Orbital rings: " +
+                uranus.isHaveRings() + "\n" + "Period of revolution: " +
+                uranus.getPeriodOfRev() + "\n" + "Number of Satellites: " +
+                uranus.getNumOfSat());
+    }
+
+    public static void showNeptune() {
+        System.out.println("Name: " + neptune.getName() + "\n" + "Type: " + neptune.getType() +
+                "\n" + "Mass: " + neptune.getMass() + "\n" + "Diameter: " +
+                neptune.getDiameter() + "\n" + "Minimal distance from the Sun: " +
+                neptune.getDistanceFromSun() + "\n" + "Distance from the Earth: " +
+                neptune.getDistanceFromEarth() + "\n" + "Orbital rings: " +
+                neptune.isHaveRings() + "\n" + "Period of revolution: " +
+                neptune.getPeriodOfRev() + "\n" + "Number of Satellites: " +
+                neptune.getNumOfSat());
+    }
+
+    public static void result() {
+        switch (choosePlanet()) {
+            case 1:
+                showEarth();
+                break;
+            case 2:
+                showVenus();
+                break;
+            case 3:
+                showSaturn();
+                break;
+            case 4:
+                showMercury();
+                break;
+            case 5:
+                showMars();
+                break;
+            case 6:
+                showJupiter();
+                break;
+            case 7:
+                showUranus();
+                break;
+            case 8:
+                showNeptune();
+                break;
+        }
+    }
+
+    public static void main(String[] args) {
+        choosePlanet();
+        result();
+    }
 }
 
 //Work in progress
