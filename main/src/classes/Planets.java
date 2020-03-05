@@ -19,6 +19,7 @@ public class Planets {
 
         this.name = name;
         this.type = type;
+        this.mass = mass;
         this.diameter = diameter;
         this.distanceFromSun = distanceFromSun;
         this.distanceFromEarth = distanceFromEarth;
@@ -60,11 +61,19 @@ public class Planets {
     public int getNumOfSat() { return numOfSat; }
 
     public void setDistanceFromSun(double distanceFromSun) {
-        this.distanceFromSun = distanceFromSun;
+        if (distanceFromSun < 28) {
+            this.distanceFromSun = 28; //Минимальное расстояние, на которое способен
+        } else {                       //приблизиться к Солнцу Меркурий
+            this.distanceFromSun = distanceFromSun;
+        }
     }
 
     public void setDistanceFromEarth(double distanceFromEarth) {
-        this.distanceFromEarth = distanceFromEarth;
+        if (distanceFromEarth < 25) {
+            this.distanceFromEarth = 25;
+        } else {
+            this.distanceFromEarth = distanceFromEarth;
+        }
     }
 }
 
