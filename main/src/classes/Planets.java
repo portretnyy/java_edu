@@ -1,6 +1,9 @@
 package classes;
+import java.util.Scanner;
 
 public class Planets {
+
+    Scanner input = new Scanner(System.in);
 
     private String name; //Имя
     private String type; //Тип
