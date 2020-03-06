@@ -3,28 +3,28 @@ import java.util.Scanner;
 
 //Объявляем и инициализируем объекты
 public class PlanetsDemo {
-    static Planets earth = new Planets("Earth", "Terrestrial", 1d, 7913,
+    static Planet earth = new Planet("Earth", "Terrestrial", 1d, 7913,
             91.3, 0, false, 365, 1);
 
-    static Planets venus = new Planets("Venus", "Terrestrial", 0.815d, 7600,
+    static Planet venus = new Planet("Venus", "Terrestrial", 0.815d, 7600,
             66.7, 25, false, 225, 0);
 
-    static Planets saturn = new Planets("Saturn", "Gas giant", 95.2d, 71500,
+    static Planet saturn = new Planet("Saturn", "Gas giant", 95.2d, 71500,
             837, 744, true, 10767, 82);
 
-    static Planets mercury = new Planets("Mercury", "Terrestrial", 0.055d, 2900,
+    static Planet mercury = new Planet("Mercury", "Terrestrial", 0.055d, 2900,
             28.6, 50, false, 88, 0);
 
-    static Planets mars = new Planets("Mars", "Terrestrial", 0.1d, 4200,
+    static Planet mars = new Planet("Mars", "Terrestrial", 0.1d, 4200,
             128.3, 35, false, 693, 2);
 
-    static Planets jupiter = new Planets("Jupiter", "Gas giant", 317.8d, 86800,
+    static Planet jupiter = new Planet("Jupiter", "Gas giant", 317.8d, 86800,
             459.9, 367, false, 4343, 79);
 
-    static Planets uranus = new Planets("Uranus", "Ice giant", 14.54d, 29400,
+    static Planet uranus = new Planet("Uranus", "Ice giant", 14.54d, 29400,
             1699, 1606, false, 30660, 27);
 
-    static Planets neptune = new Planets("Neptune", "Ice giant", 17.1d, 28000,
+    static Planet neptune = new Planet("Neptune", "Ice giant", 17.1d, 28000,
             2770, 2677, false, 60225, 14);
 
     static Scanner input = new Scanner(System.in);
@@ -281,46 +281,56 @@ public class PlanetsDemo {
         switch (first) {
             case 1:
                 one = earth.getMass();
+                break;
             case 2:
                 one = venus.getMass();
+                break;
             case 3:
                 one = saturn.getMass();
+                break;
             case 4:
                 one = mercury.getMass();
+                break;
             case 5:
                 one = mars.getMass();
+                break;
             case 6:
                 one = jupiter.getMass();
+                break;
             case 7:
                 one = uranus.getMass();
+                break;
             case 8:
                 one = neptune.getMass();
-            default:
+                break;
         }
         switch (second) {
             case 1:
                 two = earth.getMass();
+                break;
             case 2:
                 two = venus.getMass();
+                break;
             case 3:
                 two = saturn.getMass();
+                break;
             case 4:
                 two = mercury.getMass();
+                break;
             case 5:
                 two = mars.getMass();
+                break;
             case 6:
                 two = jupiter.getMass();
+                break;
             case 7:
                 two = uranus.getMass();
+                break;
             case 8:
                 two = neptune.getMass();
-            default:
+                break;
         }
-        double three = one - two;
-        if (three < 0) {
-            three = three + three * 2;
-        }
-        System.out.println("The mass difference between these planets is: " + three);
+        System.out.println("The mass difference between these planets is: " + Math.abs(one - two));
     }
 
     //Main метод

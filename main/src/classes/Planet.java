@@ -1,9 +1,8 @@
 package classes;
 import java.util.Scanner;
 
-public class Planets {
+public class Planet {
 
-    Scanner input = new Scanner(System.in);
 
     private String name; //Имя
     private String type; //Тип
@@ -16,9 +15,9 @@ public class Planets {
     private int numOfSat; //Число спутников
 
     //Начало конструктора
-    public Planets(String name, String type, double mass, int diameter, double distanceFromSun,
-                   double distanceFromEarth, boolean haveRings, int periodOfRev,
-                   int numOfSat) {
+    public Planet(String name, String type, double mass, int diameter, double distanceFromSun,
+                  double distanceFromEarth, boolean haveRings, int periodOfRev,
+                  int numOfSat) {
 
         this.name = name;
         this.type = type;
@@ -77,6 +76,15 @@ public class Planets {
         } else {
             this.distanceFromEarth = distanceFromEarth;
         }
+    }
+
+    public double getDensity() {
+        double volume = 4.0/3 * Math.PI * Math.pow(diameter/2.0, 3);
+        return mass/volume;
+    }
+
+    public static String getTest() {
+        return "String test";
     }
 }
 
