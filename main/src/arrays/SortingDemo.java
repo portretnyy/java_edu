@@ -23,7 +23,5 @@ public class SortingDemo {
             }
             System.out.println("-------------------------");
         }
-
-
     }
 }
