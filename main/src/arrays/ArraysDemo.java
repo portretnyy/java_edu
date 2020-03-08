@@ -54,4 +54,13 @@ public class ArraysDemo {
             System.out.print(s + ", ");
         }
     }
+
+    /**
+     *
+     * @param arr array
+     * @return returns min value element of array
+     */
+    public static int getMinElementFromArray(int[] arr) {
+        return 0;
+    }
 }
