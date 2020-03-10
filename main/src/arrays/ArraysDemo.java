@@ -1,9 +1,10 @@
 package arrays;
+import java.lang.Math;
 
 public class ArraysDemo {
 
     public static void main(String[] args) {
-        int [] x;
+        int[] x;
         int y[];//bad style
         int[] numbers = {1, 2, 3, 4, 5};//array of 4 numbers
         int[] otherNumbers = new int[6];//array of 6 numbers
@@ -40,6 +41,9 @@ public class ArraysDemo {
         for (int k = numbers.length - 1; k >= 0; k--) {
 
         }
+
+        int[] min = {55, 34, 6, -99, 8, -1, -66, 5};
+        getMinElementFromArray(min);
     }
 
     public static void printArray(int[] arr) {
@@ -55,12 +59,15 @@ public class ArraysDemo {
         }
     }
 
-    /**
-     *
-     * @param arr array
-     * @return returns min value element of array
-     */
-    public static int getMinElementFromArray(int[] arr) {
-        return 0;
+    public static int getMinElementFromArray(int[] any) {
+        for (int j = any.length -1; j > 0; j--) {
+            if (any[j] < any[j -1]) {
+                int temp = any[j -1];
+                any[j-1] =any[j];
+                any[j] = temp;
+            }
+            ArraysDemo.printArray(any);
+        }
+        return any[0];
     }
 }
