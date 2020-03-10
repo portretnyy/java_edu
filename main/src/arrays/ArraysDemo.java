@@ -1,4 +1,6 @@
 package arrays;
+import inheritance.Rectangle;
+
 import java.lang.Math;
 
 public class ArraysDemo {
@@ -42,8 +44,12 @@ public class ArraysDemo {
 
         }
 
-        int[] min = {55, 34, 6, -99, 8, -1, -66, 5};
-        getMinElementFromArray(min);
+        int[] min = {55, 34,-241, 6, -99, 8, -1, -66, 5};
+        System.out.println(getMinElementFromArray(min));
+
+
+        Rectangle rectangle = new Rectangle(1,1);
+
     }
 
     public static void printArray(int[] arr) {
@@ -59,15 +65,13 @@ public class ArraysDemo {
         }
     }
 
-    public static int getMinElementFromArray(int[] any) {
-        for (int j = any.length -1; j > 0; j--) {
-            if (any[j] < any[j -1]) {
-                int temp = any[j -1];
-                any[j-1] =any[j];
-                any[j] = temp;
+    public static int getMinElementFromArray(int[] arr) {
+        int currMinElement = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < currMinElement) {
+                currMinElement = arr[i];
             }
-            ArraysDemo.printArray(any);
         }
-        return any[0];
+        return currMinElement;
     }
 }
