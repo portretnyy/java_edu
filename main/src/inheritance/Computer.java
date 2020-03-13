@@ -2,22 +2,22 @@ package inheritance;
 
 public class Computer {
     private String brand;
-    private double cpuClock; // мегаГерц
+    private double cpuClock; // гигаГерц
     private int cores; // Число физических ядер
     private double ramClock; // мегаГерц
     private int ramCapacity; // Гигабайт
     private int powerSupply; // Мощность блока питания (Ватт)
-    private boolean refVideoCard; // Наличие референсной видеокарты
+    private boolean integratedVideoCard; // Наличие референсной видеокарты
 
     public Computer(String brand, double cpuClock, int cores, double ramClock,
-              int ramCapacity, int powerSupply, boolean refVideoCard) {
+              int ramCapacity, int powerSupply, boolean integratedVideoCard) {
         this.brand = brand;
         this.cpuClock = cpuClock;
         this.cores = cores;
         this.ramClock = ramClock;
         this.ramCapacity = ramCapacity;
         this.powerSupply = powerSupply;
-        this.refVideoCard = refVideoCard;
+        this.integratedVideoCard = integratedVideoCard;
     }
 
     public String getBrand() {
@@ -44,7 +44,7 @@ public class Computer {
         return powerSupply;
     }
 
-    public boolean isRefVideoCard() {
-        return refVideoCard;
+    public boolean isIntegratedVideoCard() {
+        return integratedVideoCard;
     }
 }
