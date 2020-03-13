@@ -1,6 +1,6 @@
 package inheritance;
 
-public class Computer {
+public abstract class Computer {
     private String brand;
     private double cpuClock; // гигаГерц
     private int cores; // Число физических ядер
@@ -18,6 +18,10 @@ public class Computer {
         this.ramCapacity = ramCapacity;
         this.powerSupply = powerSupply;
         this.integratedVideoCard = integratedVideoCard;
+    }
+
+
+    public Computer() {
     }
 
     public String getBrand() {
@@ -40,11 +44,14 @@ public class Computer {
         return ramCapacity;
     }
 
-    public int getPowerSupply() {
+    public final int getPowerSupply() {
         return powerSupply;
     }
 
     public boolean isIntegratedVideoCard() {
         return integratedVideoCard;
     }
+
+    public abstract void showSpecs();
+
 }

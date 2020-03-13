@@ -1,4 +1,5 @@
 package inheritance;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ComputerDemo {
@@ -12,6 +13,13 @@ public class ComputerDemo {
         Smartphone samsung = new Smartphone("Samsung", 1000, 8, 1700, 8,
                 15, 5, true);
 
+        Computer computer = getComputerFromDb();
+        computer.showSpecs();
+
+        System.out.println("apple.getPowerSupply() = " + apple.getPowerSupply());
+        System.out.println("samsung.getPowerSupply() = " + samsung.getPowerSupply());
+        Computer someComputer = samsung;
+        System.out.println("someComputer.getPowerSupply() = " + someComputer.getPowerSupply());
         switch (choose()) {
             case 1:
                 apple.showSpecs();
@@ -31,5 +39,17 @@ public class ComputerDemo {
         int choice = in.nextInt();
         System.out.println("--------------");
         return choice;
+    }
+
+    public static Computer getComputerFromDb() {
+        int randomValue = new Random().nextInt();
+
+        if (randomValue%4 == 0) {
+            return new PC("Dell", 3500, 12, 300,6, 300, true, "none", 3);
+        }
+        else {
+            return new Smartphone("Dell", 3500, 12, 300,6, 3000, 3, true);
+        }
+
     }
 }

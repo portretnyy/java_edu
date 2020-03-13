@@ -30,4 +30,5 @@ public class Smartphone extends Computer {
                 "Number of cameras: " + getNumOfCams() + ";\n" +
                 "Fold mechanism: " + isFold() + ";\n");
     }
+
 }

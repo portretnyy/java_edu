@@ -1,6 +1,6 @@
 package inheritance;
 
-public class PC extends Computer {
+public final class PC extends Computer {
     private String ledColour;
     private int numOfFans;
 
@@ -29,4 +29,5 @@ public class PC extends Computer {
                 "LED Colour: " + getLedColour() + ";\n" +
                 "Number of fans: " + getNumOfFans() + ";\n");
     }
+
 }

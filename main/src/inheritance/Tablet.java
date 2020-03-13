@@ -19,6 +19,7 @@ public class Tablet extends Computer {
         return screenDiag;
     }
 
+    @Override
     public void showSpecs() {
         System.out.println("Brand: " + getBrand() + ";\n" +
                 "CPU Clock: " + getCpuClock() + " GHz;\n" +
@@ -30,4 +31,5 @@ public class Tablet extends Computer {
                 "Touch screen: " + isTouchScreen() + ";\n" +
                 "Screen diagonal: " + getScreenDiag() + " inches;\n");
     }
+
 }
