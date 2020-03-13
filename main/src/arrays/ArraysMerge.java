@@ -3,13 +3,14 @@ package arrays;
 public class ArraysMerge {
 
     public static void main(String[] args) {
-        int[] x = {33, 56, 4, -6, 5};
-        int[] y = {44, 3, 21, 56, 78, -5, 1};
-        mergeArrays(x, y);
+        int[] x = {1,3,5,7,9,11};
+        int[] y = {2,4,8,10,16};
+        int[] ints = mergeArrays(x, y);
+        ArraysDemo.printArray(ints);
     }
 
-    public static void mergeArrays(int[]arr0, int[] arr1) {
-        int[]merged = new int[arr0.length + arr1.length];
+    public static int[] mergeArrays(int[]arr0, int[] arr1) {
+        int[] merged = new int[arr0.length + arr1.length];
         for (int i = 0; i < merged.length; i++) {
             if (i < arr0.length) {
                 merged[i] = arr0[i];
@@ -17,6 +18,10 @@ public class ArraysMerge {
                 merged[i] = arr1[i - arr0.length];
             }
         }
-        ArraysDemo.printArray(merged);
+        return merged;
+    }
+
+    public static int[] mergeArrayWithSorted(int arr0, int[] arr1) {
+        return null;
     }
 }
