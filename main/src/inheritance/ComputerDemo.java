@@ -6,12 +6,13 @@ public class ComputerDemo {
    static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Tablet apple = new Tablet("Apple", 1100, 4, 1800, 6,
-                12, true, 10);
-        PC myPC = new PC("No name", 4900, 8, 3200, 16,
+        Tablet apple = null;//new Tablet("Apple", 1100, 4, 1800, 6,
+//                12, true, 10);
+
+        PC myPC = new PC("No name", 4900, 8, new Ram(3200, 16),
                 650, true, "RGB", 6);
-        Smartphone samsung = new Smartphone("Samsung", 1000, 8, 1700, 8,
-                15, 5, true);
+        Smartphone samsung = null;//new Smartphone("Samsung", 1000, 8, 1700, 8,
+//                15, 5, true);
 
         Computer computer = getComputerFromDb();
         computer.showSpecs();

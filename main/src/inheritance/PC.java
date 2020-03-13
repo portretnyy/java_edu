@@ -4,8 +4,8 @@ public final class PC extends Computer {
     private String ledColour;
     private int numOfFans;
 
-    public PC(String brand, double cpuClock, int cores, double ramClock, int ramCapacity, int powerSupply, boolean integratedVideoCard, String ledColour, int numOfFans) {
-        super(brand, cpuClock, cores, ramClock, ramCapacity, powerSupply, integratedVideoCard);
+    public PC(String brand, double cpuClock, int cores, Ram ram, int powerSupply, boolean integratedVideoCard, String ledColour, int numOfFans) {
+        super(brand, cpuClock, cores, ram, powerSupply, integratedVideoCard);
         this.ledColour = ledColour;
         this.numOfFans = numOfFans;
     }

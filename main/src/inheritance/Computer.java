@@ -4,18 +4,15 @@ public abstract class Computer {
     private String brand;
     private double cpuClock; // гигаГерц
     private int cores; // Число физических ядер
-    private double ramClock; // мегаГерц
-    private int ramCapacity; // Гигабайт
+    private Ram ram;
     private int powerSupply; // Мощность блока питания (Ватт)
     private boolean integratedVideoCard; // Наличие референсной видеокарты
 
-    public Computer(String brand, double cpuClock, int cores, double ramClock,
-              int ramCapacity, int powerSupply, boolean integratedVideoCard) {
+    public Computer(String brand, double cpuClock, int cores, Ram ram, int powerSupply, boolean integratedVideoCard) {
         this.brand = brand;
         this.cpuClock = cpuClock;
         this.cores = cores;
-        this.ramClock = ramClock;
-        this.ramCapacity = ramCapacity;
+        this.ram = ram;
         this.powerSupply = powerSupply;
         this.integratedVideoCard = integratedVideoCard;
     }
