@@ -2,9 +2,8 @@ package inheritance;
 
 public class GamingConsole extends Computer {
 
-    public GamingConsole(String brand, double cpuClock, int cores, double ramClock, int ramCapacity, int powerSupply, boolean integratedVideoCard) {
-        super(brand, cpuClock, cores, ramClock, ramCapacity, powerSupply, integratedVideoCard);
-        System.out.println(10);
+    public GamingConsole(String brand, double cpuClock, int cores, Ram ram, int powerSupply, boolean integratedVideoCard) {
+        super(brand, cpuClock, cores, ram, powerSupply, integratedVideoCard);
     }
 
     @Override

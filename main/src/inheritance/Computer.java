@@ -29,17 +29,9 @@ public abstract class Computer {
         return cpuClock;
     }
 
-    public int getCores() {
-        return cores;
-    }
+    public int getCores() { return cores; }
 
-    public double getRamClock() {
-        return ramClock;
-    }
-
-    public int getRamCapacity() {
-        return ramCapacity;
-    }
+    public Ram getRam() { return ram; }
 
     public final int getPowerSupply() {
         return powerSupply;

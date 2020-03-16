@@ -22,8 +22,6 @@ public final class PC extends Computer {
         System.out.println("Brand: " + getBrand() + ";\n" +
                 "CPU Clock: " + getCpuClock() + " GHz;\n" +
                 "Number of cores: " + getCores() + ";\n" +
-                "RAM Clock " + getRamClock() + " MHz;\n" +
-                "RAM capacity: " + getRamCapacity() + " Gb;\n" +
                 "Power supply: " + getPowerSupply() + "W;\n" +
                 "Reference video card: " + isIntegratedVideoCard() + ";\n" +
                 "LED Colour: " + getLedColour() + ";\n" +
