@@ -15,7 +15,7 @@ public class ArraySearch {
         return index;
     }
 
-    /* read about binary search
+    // read about binary search
     public static int findBSValue(int value, int[] arr) {
         int index = 0;
         for (int i = arr.length / 2; i > 0; i /= 2) {
@@ -25,7 +25,7 @@ public class ArraySearch {
         }
         return index;
     }
-    */
+
     //O(t)
 
     public static int findBSValue(int[] arr, int value) {
