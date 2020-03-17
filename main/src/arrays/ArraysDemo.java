@@ -65,6 +65,13 @@ public class ArraysDemo {
         }
     }
 
+    public static void printArray(double[] arr) {
+        for (double i : arr) {
+            System.out.print(i + "; ");
+        }
+        System.out.println();
+    }
+
     public static int getMinElementFromArray(int[] arr) {
         int currMinElement = arr[0];
         for (int i = 1; i < arr.length; i++) {
