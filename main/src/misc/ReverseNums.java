@@ -1,23 +1,24 @@
 package misc;
 
+import arrays.ArraysDemo;
+
 public class ReverseNums {
 
 
     //{1,4,-1,6} -> {6,-1,4,1}
-    public static int reverse(int[] arr) {
+    public static int[] reverse(int[] arr) {
         for (int i = 0; i < arr.length / 2; i++) {
-            if (arr[i] != arr[arr.length - i - 1]) {
-                System.out.println("This array is not a palindrome.");
-                return 0;
-            }
+            int temp = 0;
+            temp = arr[i];
+            arr[i] = arr[arr.length - i - 1];
+            arr[arr.length - i - 1] = temp;
         }
-        System.out.println("This array is a palindrome.");
-        return 0;
+        return arr;
     }
-    // Решение можно реализовать и с помощью void метода, просто тренируюсь расставлять оператор return
 
     public static void main(String[] args) {
-        int[] x = {1,1,3,3,1,1,};
+        int[] x = {1,5,6,3,11,44,7,66};
         reverse(x);
+        ArraysDemo.printArray(x);
     }
 }
