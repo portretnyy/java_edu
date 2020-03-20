@@ -2,21 +2,24 @@ package inheritance;
 
 public class InheritanceDemo {
     public static void main(String[] args) {
-        Rectangle rectangle1 = new Rectangle(12,10);
-        Rectangle rectangle2 = new Rectangle(4,5);
-        SquarePrimitive squarePrimitive = new SquarePrimitive(6);
-        Square square = new Square(60);
+        boolean t = false;
+        if (t) {
+            Rectangle rectangle1 = new Rectangle(12,10);
+            Rectangle rectangle2 = new Rectangle(4,5);
+            SquarePrimitive squarePrimitive = new SquarePrimitive(6);
+            Square square = new Square(60);
 
-        Rectangle[] rectanglesWrong = {rectangle1, rectangle2};
-        SquarePrimitive[] squarePrimitives = {squarePrimitive};
+            Rectangle[] rectanglesWrong = {rectangle1, rectangle2};
+            SquarePrimitive[] squarePrimitives = {squarePrimitive};
 
-        Rectangle[] rectangles = {rectangle1, rectangle2, square};
+            Rectangle[] rectangles = {rectangle1, rectangle2, square};
 
-        Rectangle thisIsSquare = new Square(10);
+            Rectangle thisIsSquare = new Square(10);
 
-        System.out.println("rectangle1.getArea() =" + rectangle1.getArea() + " rectangle1.getPerimeter() = " +  rectangle1.getPerimeter());
+            System.out.println("rectangle1.getArea() =" + rectangle1.getArea() + " rectangle1.getPerimeter() = " +  rectangle1.getPerimeter());
 
-        System.out.println("getWholeArea(rectangles) = " + getWholeArea(rectangles));
+            System.out.println("getWholeArea(rectangles) = " + getWholeArea(rectangles));
+        }
     }
 
     public static int getWholeArea(Rectangle[] rectangles, SquarePrimitive[] squarePrimitives) {

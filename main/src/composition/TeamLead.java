@@ -1,10 +1,10 @@
-package Composition;
+package composition;
 
-public class Middle {
+public class TeamLead {
     private String name;
     private int salary;
 
-    public Middle(String name, int salary) {
+    public TeamLead(String name, int salary) {
         this.name = name;
         this.salary = salary;
     }

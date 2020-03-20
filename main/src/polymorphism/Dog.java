@@ -9,6 +9,7 @@ public class Dog implements Moveable {
 
     @Override
     public void move(int direction) {
-        System.out.println("dog runs to the " + Moveable.getDirectionString(direction));
+        System.out.println("dog barks");
+        System.out.println("dog runs to the SOUTH");
     }
 }

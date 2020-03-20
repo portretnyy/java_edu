@@ -1,4 +1,4 @@
-package Composition;
+package composition;
 
 public class Collective {
     private TeamLead leader;
