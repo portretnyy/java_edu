@@ -4,12 +4,18 @@ package arrays;
 
 public class SumOfElements {
 
-    public static int[] sumOfElements(int[] arr) {
+/*    public static int[] sumOfElements(int[] arr) {
         int sum = 0;
         for (int i = 1; i <= arr.length - 1; i++) {
             sum += arr[i-1];
             arr[i] = sum;
         }
+        return arr;
+    }
+
+ */
+
+    public static int[] sumOfElements(int[] arr) {
         return arr;
     }
 

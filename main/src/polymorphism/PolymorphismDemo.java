@@ -16,6 +16,13 @@ public class PolymorphismDemo {
         Exterminator[] battleArmy = {t1000, robocop, nyashka};
         moveArmy(army, 1);
         attack(battleArmy, "Cyclop");
+        Robot robot = new Robot("test");
+        new Robot("test1");
+
+        Moveable moveableRobot = new Robot("test_not");
+
+        moveableRobot = new Human();
+
     }
 
 
