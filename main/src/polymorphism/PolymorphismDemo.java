@@ -1,5 +1,6 @@
 package polymorphism;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,23 @@ public class PolymorphismDemo {
         Moveable moveableRobot = new Robot("test_not");
 
         moveableRobot = new Human();
+
+
+        Moveable m = new Moveable() {
+            @Override
+            public void move(int direction) {
+                System.out.println("move");
+            }
+        };
+
+        Robot robot1 = new Robot("test") {
+            @Override
+            public void move(int direction) {
+                super.move(direction);
+            }
+        };
+
+        m.move(1);
 
     }
 
