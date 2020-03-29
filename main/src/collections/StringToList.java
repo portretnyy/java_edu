@@ -14,11 +14,29 @@ public class StringToList {
             characterList.add(str.charAt(i));
         }
         for (int i = 0; i < characterList.size(); i++) {
-            if (iter.hasNext() && iter.next() == ',') {
-                characterList
-            } else {
+//            if (iter.hasNext() && iter.next() == ',') {
+//                characterList
+//            } else {
+//
+//            }
+        }
 
+        String s  = "test,abc,hello";
+        int begin = 0;
+        int end = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ',') {
+                end = i;
+                stringList.add(s.substring(begin, end));
+                begin = end + 1;
             }
         }
+        stringList.add(s.substring(begin));
+
+        System.out.println(stringList);
     }
+
+    String problem2 = "key1=value1;key2=value2;key3=value3; .......keyN=valueM";
+    //---->
+    Map<String, String> dictionary;
 }
