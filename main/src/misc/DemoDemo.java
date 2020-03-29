@@ -31,6 +31,10 @@ public class DemoDemo {
         System.out.println(a.hashCode());
         a[1] = 3;
         System.out.println(a.hashCode());
+
+        String x = new String("Test");
+        String y = new String("Test");
+        System.out.println(x.equals(y));
     }
 
     private static void test(Struct t) {
