@@ -34,9 +34,27 @@ public class StringToList {
         stringList.add(s.substring(begin));
 
         System.out.println(stringList);
+
+        String problem2 = "key1=value1;key2=value2;key3=value3;keyN=valueM";
+        System.out.println(toMap(problem2));
     }
 
-    String problem2 = "key1=value1;key2=value2;key3=value3; .......keyN=valueM";
+    String problem2 = "key1=value1;key2=value2;key3=value3;keyN=valueM";
     //---->
     Map<String, String> dictionary;
+
+    public static Map<String, String> toMap(String s) {
+        int begin = 0;
+        int equals = 0;
+        Map<String, String> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '=') equals = i;
+            else if (s.charAt(i) == ';') {
+                map.put(s.substring(begin, equals), s.substring(equals + 1, i));
+                begin = i + 1;
+            }
+        }
+        map.put(s.substring(begin, equals), s.substring(equals + 1, s.length()));
+        return map;
+    }
 }
