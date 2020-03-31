@@ -71,7 +71,5 @@ public class GenericDemo {
         }
     }
 
-    public static <?????> boolean equals(DataHolder<T> dataHolder1, DataHolder<T> dataHolder2) {
-
-    }
+//    public static <T> boolean equals(DataHolder<T> dataHolder1, DataHolder<T> dataHolder2) {}
 }

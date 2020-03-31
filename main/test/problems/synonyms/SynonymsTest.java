@@ -18,7 +18,7 @@ public class SynonymsTest {
 
 
     private static Synonyms getEmptySynonyms() {
-        return null;//вместо null подставить new свою реализацию!
+        return new SynonymsImpl();
     }
 
     public static void test1() {
@@ -29,6 +29,7 @@ public class SynonymsTest {
 
         synonyms.add(PROGRAM, CODE);
         synonyms.add(CODE, CIPHER);
+
         Assert.assertEquals(synonyms.count(PROGRAM), 1);
         Assert.assertEquals(synonyms.count(CODE), 2);
         Assert.assertEquals(synonyms.count(CIPHER), 1);
