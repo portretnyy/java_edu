@@ -76,5 +76,6 @@ public class CollectionsDemo {
             prices.put("гречка", 100);
         }
 
+
     }
 }
