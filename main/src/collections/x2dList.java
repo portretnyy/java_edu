@@ -17,9 +17,11 @@ public class x2dList {
 
         Map<String, ArrayList<String>> synonims = new HashMap<>();
         synonims.put("Ball", new ArrayList<String>(Arrays.asList("Football")));
+        synonims.putIfAbsent("Ball", new ArrayList<String>(Arrays.asList("Basketball")));
         synonims.putIfAbsent("Moon", new ArrayList<String>(Arrays.asList("Sphere")));
         System.out.println(synonims);
         synonims.get("Moon").add("String");
         System.out.println(synonims);
+        System.out.println(synonims.put("Ball", new ArrayList<String>(Arrays.asList("Football"))));
     }
 }
