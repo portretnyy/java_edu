@@ -23,5 +23,9 @@ public class x2dList {
         synonims.get("Moon").add("String");
         System.out.println(synonims);
         System.out.println(synonims.put("Ball", new ArrayList<String>(Arrays.asList("Football"))));
+
+        Set<String> stringSet = new HashSet<>();
+        stringSet.add("Test");
+        System.out.println(stringSet.add("Test"));
     }
 }

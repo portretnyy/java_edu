@@ -3,45 +3,36 @@ package problems.synonyms;
 import java.util.*;
 
 public class SynonymsImpl implements Synonyms {
-    Map<String, ArrayList<String>> synonimsMap = new HashMap<>();
+    Map<String, HashSet<String>> synonimsMap = new HashMap<>();
 
     @Override
     public boolean add(String word1, String word2) {
 
-        /* First attempt - messed up with return statements
-        if (synonimsMap.containsKey(word1)) {
-            if (synonimsMap.get(word1).contains(word2)) {
-                return false;
-            } else {
-                synonimsMap.get(word1).add(word2);
-                return true;
-            }
-        } else {
-            synonimsMap.put(word1, new ArrayList<String>(Arrays.asList(word2)));
-            return true;
-        }
-        if (synonimsMap.containsKey(word2)) {
-            if (synonimsMap.get(word2).contains(word1)) {
-                return false;
+        if (synonimsMap.containsKey(word1) && synonimsMap.get(word1).contains(word2)) {
+            if (!synonimsMap.containsKey(word2)) {
+                synonimsMap.put(word2, new HashSet<String>(Arrays.asList(word1)));
             } else {
                 synonimsMap.get(word2).add(word1);
-                return true;
             }
-        } else {
-            synonimsMap.put(word2, new ArrayList<String>(Arrays.asList(word1)));
-        }
-         */
-        if (synonimsMap.containsKey(word1)) {
-            if (synonimsMap.get(word1).contains(word2)) {
-                return false;
+            return false;
+        } else if (!synonimsMap.containsKey(word1)) {
+            synonimsMap.put(word1, new HashSet<String>(Arrays.asList(word2)));
+            if (!synonimsMap.containsKey(word2)) {
+                synonimsMap.put(word2, new HashSet<String>(Arrays.asList(word1)));
             } else {
-                synonimsMap.get(word1).add(word2);
-                return true;
+                synonimsMap.get(word2).add(word1);
             }
-        } else {
-            synonimsMap.put(word1, new ArrayList<String>(Arrays.asList(word2)));
+            return true;
+        } else if (!synonimsMap.get(word1).contains(word2)) {
+            synonimsMap.get(word1).add(word2);
+            if (!synonimsMap.containsKey(word2)) {
+                synonimsMap.put(word2, new HashSet<String>(Arrays.asList(word1)));
+            } else {
+                synonimsMap.get(word2).add(word1);
+            }
             return true;
         }
+        return false;
     }
 
 
