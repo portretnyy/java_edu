@@ -10,10 +10,9 @@ public class SynonymsImpl implements Synonyms {
 
         if (synonimsMap.containsKey(word1) && synonimsMap.get(word1).contains(word2)) {
             if (!synonimsMap.containsKey(word2)) {
-                synonimsMap.put(word2, new HashSet<String>(Arrays.asList(word1)));
-            } else {
-                synonimsMap.get(word2).add(word1);
+                synonimsMap.put(word2, new HashSet<>());
             }
+            synonimsMap.get(word2).add(word1);
             return false;
         } else if (!synonimsMap.containsKey(word1)) {
             synonimsMap.put(word1, new HashSet<String>(Arrays.asList(word2)));
