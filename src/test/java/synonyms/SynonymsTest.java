@@ -14,7 +14,8 @@ public class SynonymsTest {
 
     @BeforeMethod
     public void setUp() {
-        synonyms = new SynonymsImpl();
+//        synonyms = new SynonymsImpl();
+        synonyms = new SynonymsV2Impl();
     }
 
     private static Synonyms getEmptySynonyms() {
