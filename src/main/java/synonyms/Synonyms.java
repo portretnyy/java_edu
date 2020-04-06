@@ -1,4 +1,4 @@
-package problems.synonyms;
+package synonyms;
 
 
 /**

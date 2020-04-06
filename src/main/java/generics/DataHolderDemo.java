@@ -1,7 +1,5 @@
 package generics;
 
-import javax.xml.crypto.Data;
-
 public class DataHolderDemo {
     public static void main(String[] args) {
         DataHolder stringDataHolder = new DataHolder(new String[]{"passwords", "card_numbers"});

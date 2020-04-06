@@ -1,7 +1,5 @@
 package leetCode;
 
-import arrays.ArraysDemo;
-
 public class Problem_26 {
 
     public static int removeDuplicates (int arr[]) {

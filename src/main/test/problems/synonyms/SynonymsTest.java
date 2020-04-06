@@ -1,5 +1,7 @@
 package problems.synonyms;
 
+import synonyms.Synonyms;
+import synonyms.SynonymsImpl;
 import util.Assert;
 
 import java.util.*;

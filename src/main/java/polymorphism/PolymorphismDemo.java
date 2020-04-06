@@ -1,9 +1,6 @@
 package polymorphism;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PolymorphismDemo {
     public static void main(String[] args) {
         Robot t1000 = new Robot("T1000");

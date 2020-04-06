@@ -1,8 +1,6 @@
 package arrays;
 import inheritance.Rectangle;
 
-import java.lang.Math;
-
 public class ArraysDemo {
 
     public static void main(String[] args) {

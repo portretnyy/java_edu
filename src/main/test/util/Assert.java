@@ -1,7 +1,5 @@
 package util;
 
-import problems.synonyms.Synonyms;
-
 import java.util.Objects;
 
 public class Assert {
