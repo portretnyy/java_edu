@@ -21,7 +21,7 @@ public class SynonymsV2Impl implements Synonyms {
     private void addOnePair(String word1, String word2) {
         final Set<String> set = data.getOrDefault(word1, new HashSet<>());
         set.add(word2);
-        data.put(word1,set);
+        data.putIfAbsent(word1,set);
     }
 
     @Override

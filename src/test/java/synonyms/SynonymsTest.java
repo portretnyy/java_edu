@@ -16,6 +16,7 @@ public class SynonymsTest {
     public void setUp() {
 //        synonyms = new SynonymsImpl();
         synonyms = new SynonymsV2Impl();
+        System.out.println("before");
     }
 
     private static Synonyms getEmptySynonyms() {
@@ -26,9 +27,6 @@ public class SynonymsTest {
     @Test
     public void test1() {
         Assert.assertNotNull(synonyms);
-
-
-
         synonyms.add(PROGRAM, CODE);
         synonyms.add(CODE, CIPHER);
 
