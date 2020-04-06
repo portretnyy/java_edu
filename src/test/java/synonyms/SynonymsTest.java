@@ -1,10 +1,8 @@
-package problems.synonyms;
+package synonyms;
 
-import synonyms.Synonyms;
-import synonyms.SynonymsImpl;
-import util.Assert;
-
-import java.util.*;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class SynonymsTest {
 
@@ -12,19 +10,20 @@ public class SynonymsTest {
     private final static String PROGRAM = "program";
     private final static String CODE = "code";
     private final static String CIPHER = "cipher";
-    private static List<Runnable> tests = Arrays.asList(SynonymsTest::test1, SynonymsTest::test2);//можно добавить свои тесты!
+    private Synonyms synonyms;
 
-    public static void main(String[] args) {
-        tests.forEach(Runnable::run);
+    @BeforeMethod
+    public void setUp() {
+        synonyms = new SynonymsImpl();
     }
-
 
     private static Synonyms getEmptySynonyms() {
         return new SynonymsImpl();
     }
 
-    public static void test1() {
-        Synonyms synonyms = getEmptySynonyms();
+
+    @Test
+    public void test1() {
         Assert.assertNotNull(synonyms);
 
 
@@ -40,6 +39,7 @@ public class SynonymsTest {
         Assert.assertEquals(synonyms.size(), 3);
     }
 
+    @Test
     public static void test2() {
         Synonyms synonyms = getEmptySynonyms();
 
@@ -49,6 +49,4 @@ public class SynonymsTest {
         added = synonyms.add(CODE, PROGRAM);
         Assert.assertFalse(added);
     }
-
-
 }
