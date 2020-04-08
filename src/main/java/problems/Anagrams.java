@@ -22,41 +22,35 @@ public class Anagrams {
     }
 
     public static boolean isAnagram(String word1, String word2) {
-        if (word1.length() == word2.length()) {                 //Если кол-во символов в первом слове не
-                                                                //совпадает с кол-вом во втором -> false
-            Map<Character, Integer> dict1 = new HashMap<>();
-            Map<Character, Integer> dict2 = new HashMap<>();
+        if (word1 != null && word2 != null) {
 
-            for (int i = 0; i < word1.length(); i++) {          //Составляем первый словарь
-                if (!dict1.containsKey(word1.charAt(i))) {
-                    dict1.put(word1.charAt(i), 1);
-                } else {
-                    incrValueByKey(dict1, word1, i);
-                }
-            }
+            if (word1.length() == word2.length()) {
 
-            for (int i = 0; i < word2.length(); i++) {          //Состваляем второй словарь.
-                if (!dict2.containsKey(word2.charAt(i))) {      //Если символа (ключа) нет,
-                    dict2.put(word2.charAt(i), 1);              //добавляем его и значение 1.
-                } else {                                        //Если уже есть такой символ (ключ),
-                    incrValueByKey(dict2, word2, i);            //инкрементируем счетчик кол-ва.
-                }
+                Map<Character, Integer> dict1 = new HashMap<>();
+                Map<Character, Integer> dict2 = new HashMap<>();
+
+                createDictionary(dict1, word1);
+                createDictionary(dict2, word2);
+
+                return dict1.equals(dict2);
             }
-            System.out.println(dict1);
-            System.out.println(dict2);
-            return dict1.equals(dict2);                         //Сравниваем оба словаря
         }
         return false;
     }
 
-    // Метод инкрементирует значение на 1, согласно подставленным ключу и Map. Примитив j нужен для итерации
     public static void incrValueByKey(Map<Character, Integer> map, String word, int j) {
         int temp = map.get(word.charAt(j));
         temp += 1;
         map.put(word.charAt(j), temp);
     }
 
-    public static void main(String[] args) {
-        System.out.println(isAnagram2("ратификация", "тарификация"));
+    public static void createDictionary(Map<Character, Integer> map, String word) {
+        for (int i = 0; i < word.length(); i++) {
+            if (!map.containsKey(word.charAt(i))) {
+                map.put(word.charAt(i), 1);
+            } else {
+                incrValueByKey(map, word, i);
+            }
+        }
     }
 }
