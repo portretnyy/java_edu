@@ -11,7 +11,7 @@ import java.util.*;
  * Для каждого слова с помощью словаря подсчитаем, сколько раз в нём встречается каждая буква. Если для обоих слов эти словари равны
  */
 public class Anagrams {
-    public static boolean isAnagram(String word1, String word2) {
+    public static boolean isAnagram2(String word1, String word2) {
         if (word1.length() == word2.length()) {
             char firstWord[] = word1.toCharArray();
             char secondWord[] = word2.toCharArray();
@@ -21,7 +21,7 @@ public class Anagrams {
         return false;
     }
 
-    public static boolean isAnagram2(String word1, String word2) {
+    public static boolean isAnagram(String word1, String word2) {
         if (word1.length() == word2.length()) {                 //Если кол-во символов в первом слове не
                                                                 //совпадает с кол-вом во втором -> false
             Map<Character, Integer> dict1 = new HashMap<>();
@@ -42,6 +42,8 @@ public class Anagrams {
                     incrValueByKey(dict2, word2, i);            //инкрементируем счетчик кол-ва.
                 }
             }
+            System.out.println(dict1);
+            System.out.println(dict2);
             return dict1.equals(dict2);                         //Сравниваем оба словаря
         }
         return false;
@@ -55,6 +57,6 @@ public class Anagrams {
     }
 
     public static void main(String[] args) {
-        System.out.println(isAnagram2("omuamua", "muomuaa"));
+        System.out.println(isAnagram2("ратификация", "тарификация"));
     }
 }
