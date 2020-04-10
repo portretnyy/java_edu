@@ -11,6 +11,7 @@ public class BracesTest {
 
     private static final String REPEATED_BRACES = ")" + "()".repeat(500000);
 
+
     @Test
     public void testOneType() {
         assertTrue(isValidOneType("(())"));
