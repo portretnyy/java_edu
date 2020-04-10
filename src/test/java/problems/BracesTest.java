@@ -9,7 +9,8 @@ import static problems.Braces.isValidOneType;
 
 public class BracesTest {
 
-    private static final String REPEATED_BRACES = ")" + "()".repeat(500000);
+    private static final String REPEATED_BRACES_ODD = ")" + "()".repeat(500000);
+    private static final String REPEATED_BRACES_EVEN = "))" + "()".repeat(500000);
 
 
     @Test
@@ -22,6 +23,7 @@ public class BracesTest {
         assertTrue(isValidOneType("(((((())))))"));
         assertTrue(isValidOneType("(())"));
         assertTrue(isValidOneType(""));
+        assertTrue(isValidOneType("()(())"));
 
         assertFalse(isValidOneType(null));
         assertFalse(isValidOneType("(()))"));
@@ -40,7 +42,8 @@ public class BracesTest {
     public void testOneTypeSpeed() {
         final long start = System.nanoTime();
 
-        isValidOneType(REPEATED_BRACES);
+        isValidOneType(REPEATED_BRACES_EVEN);
+        isValidOneType(REPEATED_BRACES_ODD);
 
         final long end = System.nanoTime();
         System.out.println(end - start);
