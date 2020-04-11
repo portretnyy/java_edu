@@ -1,14 +1,22 @@
 package multithreading;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MultiThreading {
+
+    static int from = 1;
+    static int to = 1_000_000;
+    static int step = 1;
 
     public static void main(String[] args) throws InterruptedException {
         calc1Thread();
 
         calc4Threads();
+
+        calcNThreads(3);
     }
     public static void calc1Thread() {
         //Thread  - поток исполнения
@@ -50,10 +58,23 @@ public class MultiThreading {
     }
 
     public static void calcNThreads(int n) {
-        Map<Integer, SumThread> threads = new HashMap<>();
-        for (int i = 0; i <= n; i++) {
-            threads.put(i, new SumThread())
+        int difference;
+        long sum = 0;
+        List<SumThread> threads = new ArrayList<>();
+        difference = to / n;
+        to = difference;
+        for (int i = 1; i <= n; i++) {
+            threads.add(i - 1, new SumThread(from, to, step));
+            from += difference;
+            to += difference;
         }
+        for (SumThread thread: threads) {
+            thread.start();
+        }
+        for (int i = 0; i < threads.size(); i++) {
+            sum += threads.get(i).getResult();
+        }
+        System.out.println(sum);
     }
 
     //1 .. 1000 in 1 thread
