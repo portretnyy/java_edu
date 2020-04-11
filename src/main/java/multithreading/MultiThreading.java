@@ -1,5 +1,8 @@
 package multithreading;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MultiThreading {
 
     public static void main(String[] args) throws InterruptedException {
@@ -47,7 +50,10 @@ public class MultiThreading {
     }
 
     public static void calcNThreads(int n) {
-
+        Map<Integer, SumThread> threads = new HashMap<>();
+        for (int i = 0; i <= n; i++) {
+            threads.put(i, new SumThread())
+        }
     }
 
     //1 .. 1000 in 1 thread
