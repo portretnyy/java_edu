@@ -20,4 +20,13 @@ public class SumThread extends Thread {
     public long getResult() {
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "SumThread{" +
+                "from=" + from +
+                ", to=" + to +
+                ", step=" + step +
+                '}';
+    }
 }

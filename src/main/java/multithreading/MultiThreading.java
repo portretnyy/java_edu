@@ -1,22 +1,34 @@
 package multithreading;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MultiThreading {
 
-    static int from = 1;
-    static int to = 1_000_000;
-    static int step = 1;
+
+    public static final int UPPER_BOUND = 100_000_000;
+    public static final int STEP = 1;
 
     public static void main(String[] args) throws InterruptedException {
-        calc1Thread();
+//        calc1Thread();
 
-        calc4Threads();
+//        calc4Threads();
 
+//        calcNThreads(7);
+        //1 .. 20_000_000
+        //20_000_001 .. 40_000_000
+        //40_000_001 .. 60_000_000
+        //60_000_001 .. 80_000_000
+        //80_000_001 .. 100_000_000
+        calcNThreads(1);
+        calcNThreads(2);
         calcNThreads(3);
+        calcNThreads(4);
+        calcNThreads(5);
+        calcNThreads(8);
+        calcNThreads(12);
+        calcNThreads(16);
+        calcNThreads(32);
     }
     public static void calc1Thread() {
         //Thread  - поток исполнения
@@ -57,24 +69,28 @@ public class MultiThreading {
         System.out.println("computation took " + (endTime - startTime) + " nanoseconds");
     }
 
-    public static void calcNThreads(int n) {
+    public static void calcNThreads (int n) throws InterruptedException {
+        long startTime = System.nanoTime();
         int difference;
         long sum = 0;
         List<SumThread> threads = new ArrayList<>();
-        difference = to / n;
-        to = difference;
-        for (int i = 1; i <= n; i++) {
-            threads.add(i - 1, new SumThread(from, to, step));
-            from += difference;
-            to += difference;
+        difference = UPPER_BOUND / n;
+        for (int i = 0; i < n-1; i++) {
+            //from .. to i*difference +1 ... (i+1)*difference
+            threads.add(new SumThread(i*difference + 1, difference * (i+1), STEP));
         }
+        threads.add(new SumThread(difference*(n-1) + 1, UPPER_BOUND, STEP));
+
         for (SumThread thread: threads) {
             thread.start();
+            thread.join();
         }
         for (int i = 0; i < threads.size(); i++) {
             sum += threads.get(i).getResult();
         }
-        System.out.println(sum);
+        System.out.println("calc"  + n + "Threads = " + sum);
+        long endTime = System.nanoTime();
+        System.out.println("computation took " + (endTime - startTime) + " nanoseconds");
     }
 
     //1 .. 1000 in 1 thread
