@@ -31,4 +31,8 @@ public class Braces2 {
         }
         return braces.isEmpty();
     }
+
+    public static void main(String[] args) {
+        System.out.println(isValidOneType("(())"));
+    }
 }
