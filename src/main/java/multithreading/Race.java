@@ -6,16 +6,13 @@ public class Race {
         IncrementerThread inc1 = new IncrementerThread(data, 1_000_000);
         IncrementerThread inc2 = new IncrementerThread(data, 1_000_000);
         IncrementerThread inc3 = new IncrementerThread(data, 1_000_000);
-//        inc1.run();
-//        inc2.run();
-//        inc3.run();
 
         inc1.start();
         inc2.start();
         inc3.start();
 
         try {
-//            inc1.join();
+            inc1.join();
             inc2.join();
             inc3.join();
         } catch (InterruptedException e) {
@@ -26,6 +23,6 @@ public class Race {
     }
 
     public static class Data {
-        public int cnt = 0;
+        public volatile int cnt = 0;
     }
 }

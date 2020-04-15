@@ -12,7 +12,7 @@ public class IncrementerThread extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < howManyTimes; i++) {
-            synchronized (data) {
+            synchronized (data){
                 data.cnt++;
             }
         }
