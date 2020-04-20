@@ -6,9 +6,6 @@ import java.util.Map;
 public class Test3 {
     public static void main(String[] args) {
         Map<String,String> map = new HashMap<>();
-
-        map.forEach();
-
     }
 
     public static class Alpha {
